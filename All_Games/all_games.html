@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Store</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="stylesheet" href="all_games.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top for_navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="assets/logo-re1.png" class="logoimg" alt="" srcset=""> GAME<span class="over">OVER</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gameNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="gameNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="../Homepage/homepage.html">Store</a></li>
+          <li class="nav-item"><a class="nav-link" href="../All_Games/all_games.html">All Games</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../categories/category_racing.html">Racing</a></li>
+              <li><a class="dropdown-item" href="../categories/category_rgp.html">RPG</a></li>
+              <li><a class="dropdown-item" href="../categories/category_action.html">Action</a></li>
+              <li><a class="dropdown-item" href="../categories/category_sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../profile/profile.html">Library</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../contactUs/contact_us.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../news/news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="../privacy/privacy.html">Privacy</a></li>
+        </ul>
+
+        <form class="d-flex mx-lg-4 my-2 my-lg-0" role="search">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-secondary text-secondary">
+              <i class='bx bx-search'></i>
+            </span>
+            <input id="search_input" oninput="searchgames()"
+              class="form-control bg-transparent border-secondary text-light" type="search"
+              placeholder="Search for games">
+          </div>
+        </form>
+
+
+        <div class="d-flex align-items-center text-white gap-3">
+          <a href="../cart/cart.html" class="text-white text-decoration-none position-relative">
+            <i class='bx bx-cart fs-4'></i>
+            <span id="cart_badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+              style="background:#e94560; font-size:10px; display:none;">0</span>
+          </a>
+
+        </div>
+
+        <div class="d-flex align-items-center text-white"
+          style="flex-direction: row; flex-direction: column;margin-left: 15px;">
+          <a href="../profile/profile.html" class="text-white text-decoration-none d-flex align-items-center">
+            <i class='bx bx-user-circle fs-4 me-2'></i>
+            <span id="nav_username"></span>
+          </a>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-8">
+        <h4 class="text-start fw-medium text-light mt-4">Special Events</h4>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- carousel -->
+
+  <div class="container d-flex justify-content-center">
+
+    <div class="row">
+      <div class="col">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/landscape_comp.jpeg" class="carosel_img d-block w-90" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/Screenshot 2026-02-19 202811.png" class="carosel_img d-block w-90" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/summer-game-fest-3840x2160-1d8b576330b9.jpg" class="carosel_img d-block w-90" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- all games -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <div class="container">
+          <div class="row" id="bestsellerrow">
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/gost of thuima.jfif" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Ghost of Tsushima
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">59.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">49.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(2, 'assets/gost of thuima.jfif')" style="border-radius: 20px;">Buy
+                        Now</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/fifa26.jpg" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">EA26
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">79.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">59.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(3, 'assets/fifa26.jpg')" style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/Grand_Theft_Auto_VI.png" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">GTA VI
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">89.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p hidden class="text-decoration-line-through text-white-50">99.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(4, 'assets/Grand_Theft_Auto_VI.png')" style="border-radius: 20px;">Buy
+                        Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/Red-Dead-Redemption-2-New-Logo.jpg" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Red-Dead-Redemption-2
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p hidden class="text-opacity-50" style="color: white;">49.99$</p>
+                    </div>
+
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(5, 'assets/Red-Dead-Redemption-2-New-Logo.jpg')"
+                        style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/p1-game (1).jpg" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Nova
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">39.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">19.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(6, 'assets/p1-game (1).jpg')" style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/p28.jpg" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Mortal Kombat
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">29.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">14.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(7, 'assets/p28.jpg')" style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/p36.jpg" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Battel Field
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">19.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">9.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(8, 'assets/p36.jpg')" style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/p41.jpg" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Assassin's Creed
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">59.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">49.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(9, 'assets/p41.jpg')" style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/p46.jpg" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">F1 22
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">59.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">49.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(10, 'assets/p46.jpg')" style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/ready or not.jfif" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Ready or Not
+                  </h3>
+
+
+
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">59.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">49.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(11, 'assets/ready or not.jfif')" style="border-radius: 20px;">Buy
+                        Now</button>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3  " style="">
+              <img src="assets/eldenring.jpg" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Elden Ring
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">59.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">49.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(12, 'assets/eldenring.jpg')" style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gamescardscontainer" class="col-3 m-3 " style="">
+              <img src="assets/forza.jfif" class="card-img-top mt-3" alt="...">
+              <div class="card-body" style="display: flex; height: 100px;">
+
+                <div class="col mt-2" style="width: 100%;">
+                  <h3 class="fs-6 text-light text-start mt-2">Forza Horizon 5
+                  </h3>
+                  <div class="row mt-3">
+                    <div class="col-2">
+                      <p class="text-decoration-line-through text-white-50">59.99$</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="text-opacity-50" style="color: white;">49.99$</p>
+                    </div>
+                    <div class="col-8 text-end"><button type="button" class="btn btn-light"
+                        onclick="addToCart(13, 'assets/forza.jfif')" style="border-radius: 20px;">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- filter side -->
+
+      <div class="col-2">
+        <div class="row">
+          <div class="col d-flex" style="justify-content:space-between">
+            <p class="text-light" style="font-size: 20px;
+    margin-top: 20px;">Filter</p>
+            <p class="" style="font-size: 10px;
+    margin-top: 30px;"><a href="#" class="text-light">Reset</a></p>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="dropdown">
+            <button id="dropdowns" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Sort By
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Date</button></li>
+              <li><button class="dropdown-item" type="button">Rating</button></li>
+              <li><button class="dropdown-item" type="button">Price</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row ">
+          <div class="dropdown">
+            <button id="dropdowns" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Genres
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Action</button></li>
+              <li><button class="dropdown-item" type="button">Another action</button></li>
+              <li><button class="dropdown-item" type="button">Something else here</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row ">
+          <div class="dropdown">
+            <button id="dropdowns" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              price
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Higest</button></li>
+              <li><button class="dropdown-item" type="button">Lowest</button></li>
+              <li><button class="dropdown-item" type="button">Free</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row ">
+          <div class="dropdown ">
+            <button id="dropdowns" class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              types
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Action</button></li>
+              <li><button class="dropdown-item" type="button">RGP</button></li>
+              <li><button class="dropdown-item" type="button">Sports</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="dropdown ">
+            <button id="dropdowns" class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Platform
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">PC</button></li>
+              <li><button class="dropdown-item" type="button">XBox</button></li>
+              <li><button class="dropdown-item" type="button">PS</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="dropdown ">
+            <button id="dropdowns" class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              in stock
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Action</button></li>
+              <li><button class="dropdown-item" type="button">Another action</button></li>
+              <li><button class="dropdown-item" type="button">Something else here</button></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <footer class="mt-5 py-4" style="border-top: 1px solid rgba(255,255,255,0.1); background-color: #070f2b;">
+    <div class="container">
+      <div class="row text-light">
+
+        <div class="col-12 col-md-4 mb-3">
+          <h5 class="fw-bold">GAME<span class="over">OVER</span></h5>
+          <p class="text-white-50 small">Online Gaming Store</p>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">Store</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Browse Games</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Best Sellers</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Free Games</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">New Releases</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">Support</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 mb-3">
+          <h6 class="fw-bold mb-3">Follow Us</h6>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-discord-alt'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-youtube'></i></a>
+          </div>
+        </div>
+
+
+  </footer>
+
+
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script src="main.js"></script>
+
+
+
+</html>

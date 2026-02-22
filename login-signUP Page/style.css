@@ -1,0 +1,176 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("assets/p44.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+
+
+.over {
+    color: cyan;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+}
+
+
+
+.for_navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(7 15 43 / 92%);
+
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.nav-link:hover {
+    color: rgb(0, 255, 255);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+}
+
+
+.forlogo {
+    color: #23ff00;
+    font-family: fantasy;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+}
+
+.logoimg {
+    max-width: 25px;
+    max-height: 45px;
+}
+
+.form-control::placeholder {
+    color: white !important;
+    opacity: 1; 
+}
+
+#for_form {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(223, 225, 225, 0.3);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgb(0, 145, 255);
+}
+
+#for_form_sign {
+
+
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(223, 225, 225, 0.3);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgb(0, 145, 255);
+
+
+}
+
+.form-control {
+
+
+    border: 1px solid;
+    border-color: rgb(32, 123, 156);
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+
+
+}
+
+
+
+input {
+    color: white;
+    background-color: rgba(151, 151, 151, 0.384) !important;
+}
+
+
+
+
+#for_all_labels {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+    #for_form {
+        width: 90%;
+        padding: 20px;
+        gap: 15px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    #for_form {
+        width: 60%;
+        max-width: 500px;
+        padding: 30px;
+        gap: 15px;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    #for_form {
+        width: 100%;
+        max-width: 400px;
+        padding: 40px;
+        gap: 10px;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+    #for_form_sign {
+        width: 90%;
+        padding: 20px;
+        gap: 15px;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    #for_form_sign {
+        width: 60%;
+        max-width: 500px;
+        padding: 30px;
+        gap: 15px;
+    }
+}
+
+
+
+@media screen and (min-width: 993px) {
+    #for_form_sign {
+
+        max-width: 470px;
+        padding: 0px 30px;
+
+
+    }
+}

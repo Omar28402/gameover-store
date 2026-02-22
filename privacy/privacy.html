@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Over</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../privacy/privacy.css">
+    <link rel="stylesheet" href="../HomePage/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top for_navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="assets/logo-re1.png" class="logoimg" alt="" srcset=""> GAME<span class="over">OVER</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gameNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="gameNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="../Homepage/homepage.html">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../All_Games/all_games.html">All Games</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../categories/category_racing.html">Racing</a></li>
+                            <li><a class="dropdown-item" href="../categories/category_rgp.html">RPG</a></li>
+                            <li><a class="dropdown-item" href="../categories/category_action.html">Action</a></li>
+                            <li><a class="dropdown-item" href="../categories/category_sports.html">Sports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../profile/profile.html">Library</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about/about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contactUs/contact_us.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../news/news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../privacy/privacy.html">Privacy</a></li>
+                </ul>
+
+                <form class="d-flex mx-lg-4 my-2 my-lg-0" role="search">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-secondary text-secondary">
+                            <i class='bx bx-search'></i>
+                        </span>
+                        <input class="form-control bg-transparent border-secondary text-white" type="search"
+                            placeholder="Search games...">
+                    </div>
+                </form>
+
+
+                <div class="d-flex align-items-center text-white gap-3">
+                    <a href="../cart/cart.html" class="text-white text-decoration-none position-relative">
+                        <i class='bx bx-cart fs-4'></i>
+                        <span id="cart_badge"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                            style="background:#e94560; font-size:10px; display:none;">0</span>
+                    </a>
+
+                </div>
+
+                <div class="d-flex align-items-center text-white"
+                    style="flex-direction: row; flex-direction: column;margin-left: 15px;">
+                    <a href="../profile/profile.html" class="text-white text-decoration-none d-flex align-items-center">
+                        <i class='bx bx-user-circle fs-4 me-2'></i>
+                        <span id="nav_username"></span>
+                    </a>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="privacy-hero">
+        <h1 style="color: white;">Privacy & Legal</h1>
+        <p>Last updated: February 2026 &nbsp;·&nbsp; Effective immediately</p>
+    </div>
+
+    <div class="privacy-section">
+
+        <div class="privacy-card">
+            <span class="tag">DATA WE COLLECT</span>
+            <h2><i class='bx bx-data'></i> Information We Collect</h2>
+            <p>When you use GameOver, we collect only what's needed to run your account and process orders:</p>
+            <ul>
+                <li>Account details — name, email address, username</li>
+                <li>Purchase history and transaction records</li>
+                <li>Payment information — processed securely via encrypted channels; we never store raw card numbers
+                </li>
+                <li>Device type and browser for security and compatibility purposes</li>
+            </ul>
+            <div class="highlight-box">
+                🔒 We do <strong>not</strong> sell, rent, or trade your personal data to any third party — ever.
+            </div>
+        </div>
+
+        <div class="privacy-card">
+            <span class="tag">HOW WE USE IT</span>
+            <h2><i class='bx bx-cog'></i> How Your Data Is Used</h2>
+            <ul>
+                <li>To create and manage your account</li>
+                <li>To process payments and deliver your purchased games</li>
+                <li>To send order confirmations and support replies</li>
+                <li>To personalise your game recommendations and deals</li>
+                <li>To detect and prevent fraud or unauthorised access</li>
+            </ul>
+        </div>
+
+        <div class="privacy-card">
+            <span class="tag">COOKIES</span>
+            <h2><i class='bx bx-cookie'></i> Cookies</h2>
+            <p>We use cookies to keep you logged in, remember your cart, and understand how people use our site so we
+                can improve it. Essential cookies cannot be turned off. You can disable analytics cookies any time in
+                your browser settings.</p>
+        </div>
+
+        <!-- Refund policy -->
+        <div class="privacy-card">
+            <span class="tag">REFUNDS</span>
+            <h2><i class='bx bx-revision'></i> Refund Policy</h2>
+            <p>We offer refunds within <strong>14 days</strong> of purchase if:</p>
+            <ul>
+                <li>The product key has <strong>not</strong> been activated or redeemed</li>
+                <li>The game was not as described on our store page</li>
+                <li>A technical issue prevented you from accessing the product</li>
+            </ul>
+            <p style="margin-top:.7rem">To request a refund, contact us with your order number. Refunds are processed
+                within 5–7 business days.</p>
+        </div>
+
+        <!-- Terms -->
+        <div class="privacy-card">
+            <span class="tag">TERMS OF USE</span>
+            <h2><i class='bx bx-file'></i> Terms & Conditions</h2>
+            <ul>
+                <li>You must be 13 or older to create an account</li>
+                <li>One account per person — sharing accounts is not allowed</li>
+                <li>Purchased games are for personal use only; reselling keys is prohibited</li>
+                <li>All prices are in USD and include applicable taxes</li>
+                <li>GameOver reserves the right to suspend accounts that violate these terms</li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="privacy-card">
+            <span class="tag">CONTACT</span>
+            <h2><i class='bx bx-envelope'></i> Questions?</h2>
+            <p>If you have any questions about this policy or your data, reach us at <a
+                    href="mailto:support@gameover.com" style="color:#5865f2">support@gameover.com</a>. We aim to respond
+                within 24 hours.</p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="mt-5 py-4" style="border-top: 1px solid rgba(255,255,255,0.1); background-color: #070f2b;">
+        <div class="container">
+            <div class="row text-light">
+
+                <div class="col-12 col-md-4 mb-3">
+                    <h5 class="fw-bold">GAME<span class="over">OVER</span></h5>
+                    <p class="text-white-50 small">Online Gaming Store</p>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">Store</h6>
+                    <ul class="list-unstyled text-white-50 small">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Browse Games</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Best Sellers</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Free Games</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">New Releases</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled text-white-50 small">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Refund Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-3">
+                    <h6 class="fw-bold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white-50 fs-4"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" class="text-white-50 fs-4"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="text-white-50 fs-4"><i class='bx bxl-discord-alt'></i></a>
+                        <a href="#" class="text-white-50 fs-4"><i class='bx bxl-youtube'></i></a>
+                    </div>
+                </div>
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

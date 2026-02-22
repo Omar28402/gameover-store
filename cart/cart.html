@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameVerse – Shopping Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="cart.css">
+</head>
+
+
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top for_navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="assets/logo-re1.png" class="logoimg" alt="" srcset=""> GAME<span class="over">OVER</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gameNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="gameNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="../Homepage/homepage.html">Store</a></li>
+          <li class="nav-item"><a class="nav-link" href="../All_Games/all_games.html">All Games</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../categories/category_racing.html">Racing</a></li>
+              <li><a class="dropdown-item" href="../categories/category_rgp.html">RPG</a></li>
+              <li><a class="dropdown-item" href="../categories/category_action.html">Action</a></li>
+              <li><a class="dropdown-item" href="../categories/category_sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../profile/profile.html">Library</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../contactUs/contact_us.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../news/news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="../privacy/privacy.html">Privacy</a></li>
+        </ul>
+
+        <form class="d-flex mx-lg-4 my-2 my-lg-0" role="search">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-secondary text-secondary">
+              <i class='bx bx-search'></i>
+            </span>
+            <input class="form-control bg-transparent border-secondary text-white" type="search"
+              placeholder="Search games...">
+          </div>
+        </form>
+
+
+        <div class="d-flex align-items-center text-white gap-3">
+          <a href="../cart/cart.html" class="text-white text-decoration-none position-relative">
+            <i class='bx bx-cart fs-4'></i>
+            <span id="cart_badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+              style="background:#e94560; font-size:10px; display:none;">0</span>
+          </a>
+
+        </div>
+
+        <div class="d-flex align-items-center text-white"
+          style="flex-direction: row; flex-direction: column;margin-left: 15px;">
+          <a href="../profile/profile.html" class="text-white text-decoration-none d-flex align-items-center">
+            <i class='bx bx-user-circle fs-4 me-2'></i>
+            <span id="nav_username"></span>
+          </a>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+  <main>
+    <h1 class="page-title">Shopping Cart</h1>
+    <p class="page-sub" id="cart-subtitle">You have 2 items in your cart</p>
+
+    <div class="cart-layout">
+
+      <div class="cart-card" id="cart-items">
+
+
+
+
+      </div>
+
+
+      <div class="summary-card">
+        <h2>Order Summary</h2>
+        <div class="summary-row">
+          <span class="label">Subtotal</span>
+          <span class="value" id="subtotal">$54.98</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Discount</span>
+          <span class="value" id="discount-display">$00.00</span>
+        </div>
+        <hr class="summary-divider" />
+        <p class="discount-label">Discount Code</p>
+        <input class="discount-input" type="text" id="discount-code" placeholder="Enter code…" />
+        <div class="summary-total">
+          <span>Total</span>
+          <span id="total">$54.98</span>
+        </div>
+        <a class="btn-checkout" href="../checkout/check_out.html">Proceed to Checkout</a>
+        <a class="btn-continue" href="../HomePage/home.html">Continue Shopping</a>
+      </div>
+    </div>
+  </main>
+  <footer class="mt-5 py-4" style="border-top: 1px solid rgba(255,255,255,0.1); background-color: #070f2b;">
+    <div class="container">
+      <div class="row text-light">
+
+        <div class="col-12 col-md-4 mb-3">
+          <h5 class="fw-bold">GAME<span class="over">OVER</span></h5>
+          <p class="text-white-50 small">Online Gaming Store</p>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">Store</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Browse Games</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Best Sellers</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Free Games</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">New Releases</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">Support</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 mb-3">
+          <h6 class="fw-bold mb-3">Follow Us</h6>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-discord-alt'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-youtube'></i></a>
+          </div>
+        </div>
+
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="cart.js"></script>
+  <script>
+
+    const { createClient } = supabase;
+    const sb = createClient(
+      'https://nwlvmxuchxvfbpuqbsab.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53bHZteHVjaHh2ZmJwdXFic2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMTU2NDMsImV4cCI6MjA4Njg5MTY0M30.RswqeFtHpHbWF-SWG0Z5wNdf_1WmAvuncSmqccwwv4Q'  // ← replace this
+    );
+
+    const DISCOUNTS = { 'SAVE10': 0.10, 'GAMER20': 0.20 };
+
+    const SUPABASE_URL = 'https://nwlvmxuchxvfbpuqbsab.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53bHZteHVjaHh2ZmJwdXFic2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMTU2NDMsImV4cCI6MjA4Njg5MTY0M30.RswqeFtHpHbWF-SWG0Z5wNdf_1WmAvuncSmqccwwv4Q';
+
+    async function renderCart() {
+      const container = document.getElementById('cart-items');
+      const subtitle = document.getElementById('cart-subtitle');
+
+      let user_id = null;
+      const userdata = localStorage.getItem("loggedInUser");
+      if (userdata) {
+        try {
+          const user = JSON.parse(userdata);
+          if (user.id) user_id = user.id;
+        } catch (e) { }
+      }
+
+      if (!user_id) {
+        container.innerHTML = `<p style="color:rgba(255,255,255,.4);text-align:center;padding:3rem;">
+            Please <a href="../login/Login.html" style="color:#5865f2;">login</a> to see your cart.
+        </p>`;
+        subtitle.textContent = 'Please login first';
+        return;
+      }
+
+      try {
+        const res = await fetch(
+          `${SUPABASE_URL}/rest/v1/shopping_cart_table?user_id=eq.${user_id}&select=*`,
+          {
+            headers: {
+              'apikey': SUPABASE_KEY,
+              'Authorization': `Bearer ${SUPABASE_KEY}`
+            }
+          }
+        );
+
+        const cart = await res.json();
+        console.log("Cart from Supabase:", cart);
+
+        if (!cart || cart.length === 0) {
+          container.innerHTML = `<p style="color:rgba(255,255,255,.4);text-align:center;padding:3rem;">
+                Your cart is empty. <a href="../allgames/all_games.html" style="color:#5865f2;">Browse games</a>
+            </p>`;
+          subtitle.textContent = 'Your cart is empty';
+          updateTotals();
+          return;
+        }
+
+        container.innerHTML = cart.map(item => `
+            <div class="cart-item" data-id="${item.game_id}" data-price="${item.game_price}">
+                <img src="../All_Games/${item.image || ''}"
+ alt="${item.game_name}"
+                     onerror="this.src='https://via.placeholder.com/90x65/1c2748/fff?text=Game'"/>
+                <div class="item-info">
+                    <div class="item-name">${item.game_name}</div>
+                    <div class="qty-controls">
+                        <button class="qty-btn minus">−</button>
+                        <span class="qty-display">${item.qty}</span>
+                        <button class="qty-btn plus">+</button>
+                    </div>
+                </div>
+                <div class="item-price">$${(item.game_price * item.qty).toFixed(2)}</div>
+                <button class="delete-btn" aria-label="Remove item">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <polyline points="3 6 5 6 21 6"/>
+                        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                        <path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/>
+                    </svg>
+                </button>
+            </div>
+        `).join('');
+
+        subtitle.textContent = `You have ${cart.length} item${cart.length !== 1 ? 's' : ''} in your cart`;
+        updateTotals();
+
+      } catch (err) {
+        console.error(" Failed to load cart:", err.message);
+      }
+    }
+    function saveCart() {
+      const items = [...document.querySelectorAll('.cart-item')].map(el => ({
+        id: parseInt(el.dataset.id),
+        price: parseFloat(el.dataset.price),
+        qty: parseInt(el.querySelector('.qty-display').textContent),
+        name: el.querySelector('.item-name').textContent,
+        image: el.querySelector('img').src
+      }));
+      localStorage.setItem('cart', JSON.stringify(items)); updateCartBadge();
+    }
+
+    function updateTotals() {
+      const items = [...document.querySelectorAll('.cart-item')].map(el => ({
+        price: parseFloat(el.dataset.price),
+        qty: parseInt(el.querySelector('.qty-display').textContent)
+      }));
+
+      const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0);
+      const code = document.getElementById('discount-code').value.trim().toUpperCase();
+      const rate = DISCOUNTS[code] || 0;
+      const discountAmt = subtotal * rate;
+      const total = subtotal - discountAmt;
+
+      document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+      document.getElementById('discount-display').textContent = discountAmt > 0 ? '-$' + discountAmt.toFixed(2) : '$00.00';
+      document.getElementById('total').textContent = '$' + total.toFixed(2);
+
+      if (code) sessionStorage.setItem('gv_discount_code', code);
+    }
+
+    function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]'); const count = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+      const badge = document.getElementById('cart-count');
+      if (!badge) return;
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'flex' : 'none';
+    }
+
+    async function removeFromSupabase(gameId) {
+      try {
+        const userdata = localStorage.getItem("loggedInUser");
+        if (!userdata) return;
+        const user = JSON.parse(userdata);
+        const user_id = user.id;
+
+        const res = await fetch(
+          `${SUPABASE_URL}/rest/v1/shopping_cart_table?user_id=eq.${user_id}&game_id=eq.${gameId}`,
+          {
+            method: 'DELETE',
+            headers: {
+              'apikey': SUPABASE_KEY,
+              'Authorization': `Bearer ${SUPABASE_KEY}`
+            }
+          }
+        );
+
+        if (res.ok) {
+          console.log(" Deleted from Supabase");
+        } else {
+          const err = await res.text();
+          console.error(" Delete error:", err);
+        }
+
+      } catch (err) {
+        console.error(" Delete failed:", err.message);
+      }
+    }
+
+    async function updateQtyInSupabase(gameId, newQty) {
+      try {
+        const userdata = localStorage.getItem("loggedInUser");
+        if (!userdata) return;
+        const user = JSON.parse(userdata);
+        const user_id = user.id;
+
+        const res = await fetch(
+          `${SUPABASE_URL}/rest/v1/shopping_cart_table?user_id=eq.${user_id}&game_id=eq.${gameId}`,
+          {
+            method: 'PATCH',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': SUPABASE_KEY,
+              'Authorization': `Bearer ${SUPABASE_KEY}`
+            },
+            body: JSON.stringify({ qty: newQty })
+          }
+        );
+
+        if (res.ok) {
+          console.log("✅ Qty updated in Supabase");
+        } else {
+          const err = await res.text();
+          console.error("❌ Update error:", err);
+        }
+
+      } catch (err) {
+        console.error("❌ Update failed:", err.message);
+      }
+    }
+
+    document.getElementById('cart-items').addEventListener('click', e => {
+      const item = e.target.closest('.cart-item');
+      if (!item) return;
+
+      const gameId = parseInt(item.dataset.id);
+      const display = item.querySelector('.qty-display');
+      const price = parseFloat(item.dataset.price);
+      let qty = parseInt(display.textContent);
+
+      if (e.target.closest('.delete-btn')) {
+        item.style.transition = 'opacity .3s, transform .3s';
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(20px)';
+        setTimeout(() => {
+          item.remove();
+          saveCart();
+          updateTotals();
+
+          const remaining = document.querySelectorAll('.cart-item').length;
+          document.getElementById('cart-subtitle').textContent =
+            remaining === 0 ? 'Your cart is empty' : `You have ${remaining} item${remaining !== 1 ? 's' : ''} in your cart`;
+
+          removeFromSupabase(gameId);  
+        }, 300);
+        return;
+      }
+
+      if (e.target.closest('.plus')) {
+        qty = Math.min(qty + 1, 99);
+      }
+      else if (e.target.closest('.minus')) {
+        qty = Math.max(qty - 1, 1);
+      } else return;
+
+      display.textContent = qty;
+      item.querySelector('.item-price').textContent = '$' + (price * qty).toFixed(2);
+      saveCart();
+      updateTotals();
+      updateQtyInSupabase(gameId, qty);  // sync to Supabase
+    });
+
+    document.getElementById('discount-code').addEventListener('input', updateTotals);
+
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+
+  </script>
+</body>
+
+</html>

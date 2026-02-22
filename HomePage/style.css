@@ -1,0 +1,160 @@
+html,
+body {
+
+    background-color: #070f2b;
+
+}
+
+.over {
+    color: cyan;
+    text-shadow: 0 0 10px rgb(0, 213, 255);
+}
+
+
+
+.for_navbar {
+    background-color: #070f2b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.nav-link:hover {
+    color: rgb(0, 255, 255);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+}
+
+
+
+
+.logoimg {
+    max-width: 25px;
+    max-height: 45px;
+}
+
+.form-control::placeholder {
+    color: white !important;
+    opacity: 1; 
+}
+
+
+
+
+
+
+
+
+
+
+#carousel_img {
+    height: 523px;
+    object-fit: cover;
+}
+
+.buy_now_carousl {
+    position: absolute;
+    bottom: 100pxpx;
+    left: 16px;
+}
+
+.games_text_carousel {
+    width: fit-content;
+    text-align: start;
+    margin-left: 60px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebox:hover {
+    background-color: #1a1a1a;
+    transform: scale(1.03);
+}
+
+.sidebox img {
+    width: fit-content;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.sidebox h6 {
+    color: white;
+    margin: 0;
+}
+
+.for_see_more {
+    color: white;
+    text-decoration: none;
+}
+
+#gamescardscontainer {
+    background-color: #333847;
+    width: 296px;
+    height: 100%;
+    border-radius: 20px;
+}
+
+#gamescardscontainer:hover {
+    background-color: #111;
+    transform: scale(1.02);
+}
+
+#gamescardscontainer img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+
+
+#gamescardscontainercategory {
+    background-color: #333847;
+    width: 296px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 576px) {
+    #bestsellerrow {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    #bestsellerrow {
+
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    #bestsellerrow {
+        justify-content: space-evenly;
+    }
+
+}

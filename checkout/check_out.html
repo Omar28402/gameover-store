@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout – GameVerse</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="check_out.css">
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top for_navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="assets/logo-re1.png" class="logoimg" alt="" srcset=""> GAME<span class="over">OVER</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gameNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="gameNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="../Homepage/homepage.html">Store</a></li>
+          <li class="nav-item"><a class="nav-link" href="../All_Games/all_games.html">All Games</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../categories/category_racing.html">Racing</a></li>
+              <li><a class="dropdown-item" href="../categories/category_rgp.html">RPG</a></li>
+              <li><a class="dropdown-item" href="../categories/category_action.html">Action</a></li>
+              <li><a class="dropdown-item" href="../categories/category_sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../profile/profile.html">Library</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../contactUs/contact_us.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../news/news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="../privacy/privacy.html">Privacy</a></li>
+        </ul>
+
+        <form class="d-flex mx-lg-4 my-2 my-lg-0" role="search">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-secondary text-secondary">
+              <i class='bx bx-search'></i>
+            </span>
+            <input class="form-control bg-transparent border-secondary text-white" type="search"
+              placeholder="Search games...">
+          </div>
+        </form>
+
+
+        <div class="d-flex align-items-center text-white gap-3">
+          <a href="../cart/cart.html" class="text-white text-decoration-none position-relative">
+            <i class='bx bx-cart fs-4'></i>
+            <span id="cart_badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+              style="background:#e94560; font-size:10px; display:none;">0</span>
+          </a>
+
+        </div>
+
+        <div class="d-flex align-items-center text-white"
+          style="flex-direction: row; flex-direction: column;margin-left: 15px;">
+          <a href="../profile/profile.html" class="text-white text-decoration-none d-flex align-items-center">
+            <i class='bx bx-user-circle fs-4 me-2'></i>
+            <span id="nav_username"></span>
+          </a>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="checkout-wrapper">
+    <h1 class="page-title">Checkout</h1>
+
+    <div class="checkout-grid">
+
+
+      <div class="payment-card">
+        <h2>Payment Method</h2>
+
+
+        <div class="pay-logos">
+          <button class="pay-logo-btn active" data-method="visa" onclick="selectMethod(this)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
+          </button>
+          <button class="pay-logo-btn" data-method="mastercard" onclick="selectMethod(this)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" />
+          </button>
+          <button class="pay-logo-btn" data-method="paypal" onclick="selectMethod(this)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" />
+          </button>
+          <button class="pay-logo-btn" data-method="payoneer" onclick="selectMethod(this)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Payoneer_logo.svg" alt="Payoneer" />
+          </button>
+        </div>
+
+
+        <div id="card-fields">
+          <input type="text" id="card-name" class="checkout-input" placeholder="Card Holder Name" />
+          <p class="field-error" id="err-name">Please enter the card holder name</p>
+
+          <input type="text" id="card-number" class="checkout-input" placeholder="Card Number" maxlength="19"
+            oninput="formatCard(this)" />
+          <p class="field-error" id="err-number">Please enter a valid 16-digit card number</p>
+
+          <div class="input-row">
+            <div>
+              <input type="text" id="card-expiry" class="checkout-input" placeholder="Expiry Date MM/YY" maxlength="5"
+                oninput="formatExpiry(this)" />
+              <p class="field-error" id="err-expiry">Invalid expiry date</p>
+            </div>
+            <div>
+              <input type="password" id="card-cvv" class="checkout-input" placeholder="CVV" maxlength="4" />
+              <p class="field-error" id="err-cvv">Invalid CVV</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="redirect-msg" style="display:none; color:rgba(255,255,255,.6); font-size:.9rem; padding:.5rem 0">
+          You will be redirected to complete payment after clicking Confirm Payment.
+        </div>
+
+
+        <div class="or-divider">or</div>
+
+
+        <p class="saved-label">Pay with saved method</p>
+        <div class="saved-methods">
+          <div class="saved-method active" onclick="selectSaved(this)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
+            <span class="saved-method-num">•••• •••• •••• 1234</span>
+          </div>
+          <div class="saved-method" onclick="selectSaved(this)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" />
+            <span class="saved-method-num">Paypal</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="summary-card">
+        <h2>Order Summary</h2>
+
+        <div class="summary-row">
+          <span class="label">Subtotal</span>
+          <span class="value" id="co-subtotal">$54.98</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Discount</span>
+          <span class="value" id="co-discount">$00.00</span>
+        </div>
+
+        <hr class="summary-divider" />
+
+        <div class="summary-total">
+          <span>Total</span>
+          <span id="co-total">$54.98</span>
+        </div>
+
+        <button class="btn-confirm" onclick="confirmPayment()">Confirm Payment</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="success-overlay" id="success-overlay">
+    <div class="success-icon">
+      <svg width="40" height="40" fill="none" stroke="#3ecf8e" stroke-width="2.5" viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12" />
+      </svg>
+    </div>
+    <h2>Thank you for your purchase!</h2>
+    <p>An email will be sent to you with order details.</p>
+    <a href="../HomePage/homepage.html" class="btn-success-home">Back to Home</a>
+  </div>
+
+
+  <footer class="mt-5 py-4" style="border-top: 1px solid rgba(255,255,255,0.1); background-color: #070f2b;">
+    <div class="container">
+      <div class="row text-light">
+
+        <div class="col-12 col-md-4 mb-3">
+          <h5 class="fw-bold">GAME<span class="over">OVER</span></h5>
+          <p class="text-white-50 small">Online Gaming Store</p>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">Store</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Browse Games</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Best Sellers</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Free Games</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">New Releases</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">Support</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 mb-3">
+          <h6 class="fw-bold mb-3">Follow Us</h6>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-discord-alt'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-youtube'></i></a>
+          </div>
+        </div>
+
+
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="check_out.js"></script>
+
+</body>
+
+</html>

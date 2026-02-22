@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account – GameVerse</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Nunito:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top for_navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="assets/logo-re1.png" class="logoimg" alt="" srcset=""> GAME<span class="over">OVER</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gameNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="gameNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="../Homepage/homepage.html">Store</a></li>
+          <li class="nav-item"><a class="nav-link" href="../All_Games/all_games.html">All Games</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../categories/category_racing.html">Racing</a></li>
+              <li><a class="dropdown-item" href="../categories/category_rgp.html">RPG</a></li>
+              <li><a class="dropdown-item" href="../categories/category_action.html">Action</a></li>
+              <li><a class="dropdown-item" href="../categories/category_sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../profile/profile.html">Library</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../contactUs/contact_us.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../news/news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="../privacy/privacy.html">Privacy</a></li>
+        </ul>
+
+        <form class="d-flex mx-lg-4 my-2 my-lg-0" role="search">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-secondary text-secondary">
+              <i class='bx bx-search'></i>
+            </span>
+            <input class="form-control bg-transparent border-secondary text-white" type="search"
+              placeholder="Search games...">
+          </div>
+        </form>
+
+
+        <div class="d-flex align-items-center text-white gap-3">
+          <a href="../cart/cart.html" class="text-white text-decoration-none position-relative">
+            <i class='bx bx-cart fs-4'></i>
+            <span id="cart_badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+              style="background:#e94560; font-size:10px; display:none;">0</span>
+          </a>
+
+        </div>
+
+        <div class="d-flex align-items-center text-white"
+          style="flex-direction: row; flex-direction: column;margin-left: 15px;">
+          <a href="../profile/profile.html" class="text-white text-decoration-none d-flex align-items-center">
+            <i class='bx bx-user-circle fs-4 me-2'></i>
+            <span id="nav_username"></span>
+          </a>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="profile-wrapper">
+
+
+    <aside class="sidebar">
+      <div class="sidebar-item active" onclick="showpanel('dashboard', this)">
+        <div class="sidebar-title">My Account</div>
+        <div class="sidebar-sub">Account Management</div>
+      </div>
+      <div class="sidebar-item" onclick="showpanel('personal', this)">
+        <div class="sidebar-title">Personal Information</div>
+        <div class="sidebar-sub">Modify Your Personal Information</div>
+      </div>
+      <div class="sidebar-item" onclick="showpanel('orders', this)">
+        <div class="sidebar-title">My Orders</div>
+        <div class="sidebar-sub">View Your Previous Orders</div>
+      </div>
+      <div class="sidebar-item" onclick="showpanel('wishlist', this)">
+        <div class="sidebar-title">Wishlist</div>
+        <div class="sidebar-sub">View Games You Added in Wishlist</div>
+      </div>
+      <div class="sidebar-item" onclick="showpanel('payments', this)">
+        <div class="sidebar-title">Payment Methods</div>
+        <div class="sidebar-sub">Adjust Your Payment Method</div>
+      </div>
+    </aside>
+
+
+    <div>
+
+
+      <div class="content-panel active" id="panel-dashboard">
+        <h1 class="dash-greeting">Hello Gamer-#125412</h1>
+        <p class="dash-sub">What do you want to do?</p>
+        <div class="dash-grid">
+          <div class="dash-card" onclick="showpanel('personal', document.querySelectorAll('.sidebar-item')[1])">
+            <div class="dash-icon"><i class="bx bx-user"></i></div>
+            <div class="dash-card-title">Personal Information</div>
+            <div class="dash-card-sub">Modify Your Personal Information</div>
+          </div>
+          <div class="dash-card" onclick="showpanel('orders', document.querySelectorAll('.sidebar-item')[2])">
+            <div class="dash-icon"><i class="bx bx-cart"></i></div>
+            <div class="dash-card-title">My Orders</div>
+            <div class="dash-card-sub">Manage Your Previous Orders</div>
+          </div>
+          <div class="dash-card" onclick="showpanel('wishlist', document.querySelectorAll('.sidebar-item')[3])">
+            <div class="dash-icon"><i class="bx bx-heart"></i></div>
+            <div class="dash-card-title">Wishlist</div>
+            <div class="dash-card-sub">View Games You Added in Wishlist</div>
+          </div>
+          <div class="dash-card" onclick="showpanel('payments', document.querySelectorAll('.sidebar-item')[4])">
+            <div class="dash-icon"><i class="bx bx-wallet"></i></div>
+            <div class="dash-card-title">Payment Methods</div>
+            <div class="dash-card-sub">Adjust Your Payment Method</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="content-panel" id="panel-personal">
+        <div class="info-card">
+          <div style="margin-bottom:1.1rem">
+            <label class="field-label">Your Name</label>
+            <input type="text" class="profile-input" id="pi-name" value="Gamer-#125412" />
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.1rem">
+            <div>
+              <label class="field-label">Email Address</label>
+              <input type="email" class="profile-input" id="pi-email" value="emailaddress@gmail.com" />
+              <p class="field-verified">Email Verified</p>
+            </div>
+            <div>
+              <label class="field-label">Mobile</label>
+              <input type="tel" class="profile-input" id="pi-phone" value="+20100000000" />
+              <p class="field-verified">Number Verified</p>
+            </div>
+          </div>
+          <div style="margin-bottom:1.4rem">
+            <label class="field-label">Password</label>
+            <a href="#" class="recover-link">Recover password</a>
+          </div>
+          <button class="btn-save" onclick="savePersonalInfo()">Save</button>
+        </div>
+      </div>
+
+
+      <div class="content-panel" id="panel-orders">
+        <div id="orders-list">
+
+        </div>
+      </div>
+
+
+      <div class="content-panel" id="panel-wishlist">
+        <div class="info-card" id="wishlist-list">
+
+        </div>
+      </div>
+
+
+      <div class="content-panel" id="panel-payments">
+        <div class="info-card">
+
+
+          <div id="saved-payments-list"></div>
+
+
+          <div class="add-pay-section">
+            <p class="add-pay-title">Add a payment method</p>
+
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleaccordion('acc-card', 'chev-card')">
+                <div class="accordion-header-left">
+                  <i class="bx bx-credit-card"></i>
+                  <span>Credit Card / Debit Card</span>
+                </div>
+                <i class="bx bx-chevron-up accordion-chevron" id="chev-card"></i>
+              </div>
+              <div class="accordion-body" id="acc-card">
+                <p class="card-details-label">Card Details</p>
+                <div class="pay-input-grid">
+                  <input type="text" class="pay-input" id="new-holder" placeholder="Card Holder Name" />
+                  <input type="text" class="pay-input" id="new-number" placeholder="Card Number" maxlength="19"
+                    oninput="fmtcard(this)" />
+                </div>
+                <div class="pay-input-grid">
+                  <input type="text" class="pay-input" id="new-expiry" placeholder="Expiry Date" maxlength="5"
+                    oninput="fmtexp(this)" />
+                  <input type="password" class="pay-input" id="new-cvv" placeholder="CVV" maxlength="4" />
+                </div>
+                <div style="display:flex; gap:.7rem; margin-top:.5rem">
+                  <button class="btn-white-sm" onclick="addcardmethod()">Add payment method</button>
+                  <button class="btn-outline-sm" onclick="toggleaccordion('acc-card','chev-card')">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleaccordion('acc-pp', 'chev-pp')">
+                <div class="accordion-header-left">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" style="height:18px" />
+                  <span>PayPal</span>
+                </div>
+                <i class="bx bx-chevron-up accordion-chevron" id="chev-pp"></i>
+              </div>
+              <div class="accordion-body" id="acc-pp">
+                <div style="margin-bottom:.8rem">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                    style="height:32px; background:#fff; border-radius:6px; padding:4px 10px" />
+                </div>
+                <div style="display:flex; gap:.7rem">
+                  <button class="paypal-btn" onclick="addpaypal()">Connect PayPal</button>
+                  <button class="btn-outline-sm" onclick="toggleaccordion('acc-pp','chev-pp')">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-5 py-4" style="border-top: 1px solid rgba(255,255,255,0.1); background-color: #070f2b;">
+    <div class="container">
+      <div class="row text-light">
+
+        <div class="col-12 col-md-4 mb-3">
+          <h5 class="fw-bold">GAME<span class="over">OVER</span></h5>
+          <p class="text-white-50 small">Online Gaming Store</p>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">Store</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Browse Games</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Best Sellers</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Free Games</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">New Releases</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">Support</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 mb-3">
+          <h6 class="fw-bold mb-3">Follow Us</h6>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-discord-alt'></i></a>
+            <a href="#" class="text-white-50 fs-4"><i class='bx bxl-youtube'></i></a>
+          </div>
+        </div>
+
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="profile1.js"></script>
+
+</body>
+
+</html>

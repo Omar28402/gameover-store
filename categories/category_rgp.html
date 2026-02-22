@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RPG Games - GameOver</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="category.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top for_navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="assets/logo-re1.png" class="logoimg" alt="" srcset=""> GAME<span class="over">OVER</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gameNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="gameNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="../Homepage/homepage.html">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../All_Games/all_games.html">All Games</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../categories/category_racing.html">Racing</a></li>
+                            <li><a class="dropdown-item" href="../categories/category_rgp.html">RPG</a></li>
+                            <li><a class="dropdown-item" href="../categories/category_action.html">Action</a></li>
+                            <li><a class="dropdown-item" href="../categories/category_sports.html">Sports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../profile/profile.html">Library</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about/about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contactUs/contact_us.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../news/news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../privacy/privacy.html">Privacy</a></li>
+                </ul>
+
+                <form class="d-flex mx-lg-4 my-2 my-lg-0" role="search">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-secondary text-secondary">
+                            <i class='bx bx-search'></i>
+                        </span>
+                        <input id="search_input" oninput="searchgames()"
+                            class="form-control bg-transparent border-secondary text-light" type="search"
+                            placeholder="Search for games">
+                    </div>
+                </form>
+
+
+                <div class="d-flex align-items-center text-white gap-3">
+                    <a href="../cart/cart.html" class="text-white text-decoration-none position-relative">
+                        <i class='bx bx-cart fs-4'></i>
+                        <span id="cart_badge"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                            style="background:#e94560; font-size:10px; display:none;">0</span>
+                    </a>
+
+                </div>
+
+                <div class="d-flex align-items-center text-white"
+                    style="flex-direction: row; flex-direction: column;margin-left: 15px;">
+                    <a href="../profile/profile.html" class="text-white text-decoration-none d-flex align-items-center">
+                        <i class='bx bx-user-circle fs-4 me-2'></i>
+                        <span id="nav_username"></span>
+                    </a>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+
+                <p class="text-white-50">Role Playing Games</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- games -->
+            <div class="col-10">
+                <div class="container">
+                    <div class="row" id="bestsellerrow">
+
+                        <!-- game 1 -->
+                        <div id="gamescardscontainer" class="col-3 m-3">
+                            <img src="assets/eldenring.jfif" class="card-img-top mt-3" alt="Elden Ring">
+                            <div class="card-body" style="display: flex; height: 100px;">
+                                <div class="col mt-2" style="width: 100%;">
+                                    <h3 class="fs-6 text-light text-start mt-2">Elden Ring</h3>
+                                    <div class="row mt-3">
+                                        <div class="col-2">
+                                            <p class="text-decoration-line-through text-white-50">59.99$</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p style="color: white;">49.99$</p>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <button type="button" class="btn btn-light" style="border-radius: 20px;"
+                                                onclick="addToCart(12, 'assets/eldenring.jfif')"
+>Buy
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="gamescardscontainer" class="col-3 m-3">
+                            <img src="assets/withcjer.png" class="card-img-top mt-3" alt="Elden Ring">
+                            <div class="card-body" style="display: flex; height: 100px;">
+                                <div class="col mt-2" style="width: 100%;">
+                                    <h3 class="fs-6 text-light text-start mt-2">The Withcer</h3>
+                                    <div class="row mt-3">
+                                        <div class="col-2">
+                                            <p style="color: white;">49.99$</p>
+                                        </div>
+                                        <div class="col-2" hidden>
+                                            <p class="text-decoration-line-through text-white-50">59.99$</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p style="color: white;">49.99$</p>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <button type="button" class="btn btn-light" style="border-radius: 20px;"
+                                                onclick="addToCart(14, 'assets/withcjer.png')"
+>Buy
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="gamescardscontainer" class="col-3 m-3">
+                            <img src="assets/darksoulsrgp.webp" class="card-img-top mt-3" alt="Elden Ring">
+                            <div class="card-body" style="display: flex; height: 100px;">
+                                <div class="col mt-2" style="width: 100%;">
+                                    <h3 class="fs-6 text-light text-start mt-2">Dark Souls lll</h3>
+                                    <div class="row mt-3">
+                                        <div class="col-2">
+                                            <p class="text-decoration-line-through text-white-50">59.99$</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p style="color: white;">49.99$</p>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <button type="button" class="btn btn-light" style="border-radius: 20px;"
+                                                onclick="addToCart(15, 'assets/darksoulsrgp.webp')"
+>Buy
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- game 2 -->
+                        <div id="gamescardscontainer" class="col-3 m-3">
+                            <img src="assets/RGP4.webp" class="card-img-top mt-3" alt="The Witcher 3">
+                            <div class="card-body" style="display: flex; height: 100px;">
+                                <div class="col mt-2" style="width: 100%;">
+                                    <h3 class="fs-6 text-light text-start mt-2">Horizon</h3>
+                                    <div class="row mt-3">
+                                        <div class="col-2">
+                                            <p class="text-decoration-line-through text-white-50">39.99$</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p style="color: white;">19.99$</p>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <button type="button" class="btn btn-light" style="border-radius: 20px;"
+                                                onclick="addToCart(16, 'assets/RGP4.webp')"
+>Buy
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- game 3 -->
+                        <div id="gamescardscontainer" class="col-3 m-3">
+                            <img src="assets/RGP3.webp" class="card-img-top mt-3" alt="Cyberpunk 2077">
+                            <div class="card-body" style="display: flex; height: 100px;">
+                                <div class="col mt-2" style="width: 100%;">
+                                    <h3 class="fs-6 text-light text-start mt-2">BloodBrone</h3>
+                                    <div class="row mt-3">
+                                        <div class="col-2">
+                                            <p class="text-decoration-line-through text-white-50">59.99$</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p style="color: white;">29.99$</p>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <button type="button" class="btn btn-light" style="border-radius: 20px;"
+onclick="addToCart(17, 'assets/RGP3.webp')"
+>Buy
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- game 4 -->
+                        <div id="gamescardscontainer" class="col-3 m-3">
+                            <img src="assets/finalfantasy.webp" class="card-img-top mt-3" alt="Baldur's Gate 3">
+                            <div class="card-body" style="display: flex; height: 100px;">
+                                <div class="col mt-2" style="width: 100%;">
+                                    <h3 class="fs-6 text-light text-start mt-2">Final Fantasy</h3>
+                                    <div class="row mt-3">
+                                        <div class="col-2">
+                                            <p class="text-decoration-line-through text-white-50">69.99$</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p style="color: white;">59.99$</p>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <button type="button" class="btn btn-light" style="border-radius: 20px;"
+                                                onclick="addToCart(18, 'assets/finalfantasy.webp')">Buy
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- filter side -->
+            <div class="col-2">
+                <div class="row">
+                    <div class="col d-flex" style="justify-content:space-between">
+                        <p class="text-light" style="font-size: 20px; margin-top: 20px;">Filter</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="dropdown">
+                        <button id="dropdowns" class="btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">
+                            Price
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" onclick="price_high_to_low()">Highest</button></li>
+                            <li><button class="dropdown-item" onclick="price_low_to_high()">Lowest</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="mt-5 py-4" style="border-top: 1px solid rgba(255,255,255,0.1); background-color: #070f2b;">
+        <div class="container">
+            <div class="row text-light">
+                <div class="col-12 col-md-4 mb-3">
+                    <h5 class="fw-bold">GAME<span class="over">OVER</span></h5>
+                    <p class="text-white-50 small">Online Gaming Store</p>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">Store</h6>
+                    <ul class="list-unstyled text-white-50 small">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Browse Games</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Best Sellers</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Free Games</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled text-white-50 small">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <h6 class="fw-bold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white-50 fs-4"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" class="text-white-50 fs-4"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="text-white-50 fs-4"><i class='bx bxl-discord-alt'></i></a>
+                        <a href="#" class="text-white-50 fs-4"><i class='bx bxl-youtube'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../cart/cart.js"></script>
+    <script src="category.js"></script>
+
+</body>
+
+</html>
