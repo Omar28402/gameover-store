@@ -64,7 +64,6 @@ body {
     padding: 0 3px;
 }
 
-/* Hero */
 .page-hero {
     background: linear-gradient(135deg, #0a1535 0%, #1c2748 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -83,7 +82,6 @@ body {
     font-size: .95rem;
 }
 
-/* Body */
 .page-body {
     max-width: 960px;
     margin: 3rem auto;
@@ -99,7 +97,6 @@ body {
     gap: .5rem;
 }
 
-/* Filter tabs */
 .filter-tabs {
     display: flex;
     gap: .5rem;
@@ -126,7 +123,6 @@ body {
     color: #fff;
 }
 
-/* Featured article */
 .featured-card {
     background: #1c2748;
     border: 1px solid rgba(255, 255, 255, .06);
@@ -161,7 +157,6 @@ body {
     margin-bottom: .7rem;
 }
 
-/* News tag badge */
 .news-tag {
     display: inline-block;
     font-size: .7rem;
@@ -217,7 +212,6 @@ body {
     align-items: center;
 }
 
-/* Regular article card */
 .article-card {
     background: #1c2748;
     border: 1px solid rgba(255, 255, 255, .06);
@@ -257,7 +251,6 @@ body {
     margin-bottom: .8rem;
 }
 
-/* Reviews row */
 .review-card {
     background: #1c2748;
     border: 1px solid rgba(255, 255, 255, .06);
@@ -300,7 +293,6 @@ body {
     margin-left: .3rem;
 }
 
-/* Newsletter */
 .newsletter-box {
     background: linear-gradient(135deg, #1c2748 0%, #2d3a7a 100%);
     border: 1px solid rgba(88, 101, 242, .3);

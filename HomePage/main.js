@@ -1,5 +1,5 @@
 
-// search for game
+// search 
 function searchgames() {
   let input = document.getElementById("search_input").value.toLowerCase()
   let allcards = document.querySelectorAll("#gamescardscontainer")
@@ -54,7 +54,6 @@ async function addtocart(game_id, image) {
         return
     }
 
-    // save to localstorage
     let cart = JSON.parse(localStorage.getItem('cart') || '[]')
     let existing = cart.find(function(item) { return item.id === game_id })
 

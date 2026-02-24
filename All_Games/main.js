@@ -27,7 +27,7 @@ function searchgames() {
 const SUPABASE_URL = 'https://nwlvmxuchxvfbpuqbsab.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53bHZteHVjaHh2ZmJwdXFic2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMTU2NDMsImV4cCI6MjA4Njg5MTY0M30.RswqeFtHpHbWF-SWG0Z5wNdf_1WmAvuncSmqccwwv4Q';
 
-async function addToCart(game_id, image) {
+async function addtocart(game_id, image) {
 
   let game_name, game_price;
 
@@ -143,4 +143,4 @@ function showToast(message) {
   toast._timer = setTimeout(() => { toast.style.opacity = '0'; }, 2500);
 }
 
-document.addEventListener('DOMContentLoaded', updateCartBadge);
+document.addEventListener('DOMContentLoaded', updatecartbadge);

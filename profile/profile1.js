@@ -1,9 +1,7 @@
-// supabase connection info
 const SUPABASE_URL = 'https://nwlvmxuchxvfbpuqbsab.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53bHZteHVjaHh2ZmJwdXFic2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMTU2NDMsImV4cCI6MjA4Njg5MTY0M30.RswqeFtHpHbWF-SWG0Z5wNdf_1WmAvuncSmqccwwv4Q';
 
 
-// this function loads the user info from supabase and shows it on the page
 async function loadpersonalinfo() {
 
     // get the user from localstorage
@@ -17,19 +15,16 @@ async function loadpersonalinfo() {
 
     let user = JSON.parse(userdata)
 
-    // show username in the navbar
     let navusername = document.getElementById('nav_username')
     if (navusername) {
         navusername.textContent = user.username
     }
 
-    // show hello message with username
     let greeting = document.querySelector('.dash-greeting')
     if (greeting) {
         greeting.textContent = 'Hello ' + user.username + '!'
     }
 
-    // get user data from supabase using their id
     try {
         let response = await fetch(
             SUPABASE_URL + '/rest/v1/users_table?id=eq.' + user.id + '&select=*',
@@ -43,7 +38,6 @@ async function loadpersonalinfo() {
 
         let data = await response.json()
 
-        // if we got data put it in the input fields
         if (data && data.length > 0) {
             document.getElementById('pi-name').value  = data[0].username     || ''
             document.getElementById('pi-email').value = data[0].email        || ''
@@ -56,21 +50,17 @@ async function loadpersonalinfo() {
 }
 
 
-// this function saves the user info when they click save button
 async function savepersonalinfo() {
 
-    // get what the user typed in the inputs
     let name  = document.getElementById('pi-name').value.trim()
     let email = document.getElementById('pi-email').value.trim()
     let phone = document.getElementById('pi-phone').value.trim()
 
-    // make sure name and email are not empty
     if (!name || !email) {
         alert('Name and email are required.')
         return
     }
 
-    // get user from localstorage
     let userdata = localStorage.getItem("loggedInUser")
     if (!userdata) {
         alert('You must be logged in.')
@@ -79,7 +69,6 @@ async function savepersonalinfo() {
 
     let user = JSON.parse(userdata)
 
-    // send the new data to supabase to update the row
     try {
         let response = await fetch(
             SUPABASE_URL + '/rest/v1/users_table?id=eq.' + user.id,
@@ -107,7 +96,6 @@ async function savepersonalinfo() {
 
             alert('Profile saved!')
 
-            // update the welcome mesage 
             let greeting = document.querySelector('.dash-greeting')
             if (greeting) {
                 greeting.textContent = 'Hello ' + name + '!'
@@ -124,7 +112,6 @@ async function savepersonalinfo() {
 }
 
 
-// gets the user orders from table and print them
 async function loadorders() {
 
     let list = document.getElementById('orders-list')
@@ -138,7 +125,6 @@ async function loadorders() {
 
     let user = JSON.parse(userdata)
 
-    // get this user orders from supabase
     try {
         let response = await fetch(
             SUPABASE_URL + '/rest/v1/shopping_cart_table?user_id=eq.' + user.id + '&select=*',
@@ -152,13 +138,11 @@ async function loadorders() {
 
         let orders = await response.json()
 
-        // if no orders show empty message
         if (!orders || orders.length === 0) {
             list.innerHTML = '<p style="color:rgba(255,255,255,.4);text-align:center;padding:2rem">No orders yet.</p>'
             return
         }
 
-        // loop through orders and show each one
         let html = ''
         for (let i = 0; i < orders.length; i++) {
             let item = orders[i]
@@ -184,9 +168,7 @@ async function loadorders() {
 }
 
 
-// this function shows the right panel when user clicks sidebar
 function showpanel(name, el) {
-    // hide all panels
     let panels = document.querySelectorAll('.content-panel')
     for (let i = 0; i < panels.length; i++) {
         panels[i].classList.remove('active')
@@ -197,10 +179,8 @@ function showpanel(name, el) {
         sideitems[i].classList.remove('active')
     }
 
-    // show the panel we want
     document.getElementById('panel-' + name).classList.add('active')
 
-    // mark sidebar item as active
     if (el) {
         el.classList.add('active')
     }
@@ -245,11 +225,9 @@ function addcardmethod() {
 }
 
 
-// demo only - connect paypal button
 function addpaypal() {
     alert('PayPal connected (demo only).')
 }
 
 
-// when page loads run loadpersonalinfo
 document.addEventListener('DOMContentLoaded', loadpersonalinfo)

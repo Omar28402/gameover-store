@@ -1,6 +1,6 @@
 
 
-// search for game
+// search 
 function searchgames() {
     let input = document.getElementById("search_input").value.toLowerCase()
     let allcards = document.querySelectorAll("#gamescardscontainer")
@@ -16,11 +16,10 @@ function searchgames() {
     }
 }
 
-//post to the shopping cart table  when clikc buy now
 const SUPABASE_URL = 'https://nwlvmxuchxvfbpuqbsab.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53bHZteHVjaHh2ZmJwdXFic2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMTU2NDMsImV4cCI6MjA4Njg5MTY0M30.RswqeFtHpHbWF-SWG0Z5wNdf_1WmAvuncSmqccwwv4Q';
 
-async function addToCart(game_id, image) {
+async function addtocart(game_id, image) {
     let game_name, game_price;
     try {
         const res = await fetch(
@@ -38,7 +37,7 @@ async function addToCart(game_id, image) {
     if (existing) { existing.qty += 1; }
     else { cart.push({ id: game_id, title: game_name, price: game_price, image: image, qty: 1 }); }
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartBadge();
+    updatecartbadge();
     showToast(game_name + " added to cart!");
 
     let user_id = null;
@@ -53,7 +52,7 @@ async function addToCart(game_id, image) {
     });
 }
 
-function updateCartBadge() {
+function updatecartbadge() {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const count = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
     const badge = document.getElementById('cart_badge');
@@ -76,7 +75,7 @@ function showToast(message) {
     toast._timer = setTimeout(() => { toast.style.opacity = '0'; }, 2500);
 }
 
-document.addEventListener('DOMContentLoaded', updateCartBadge);
+document.addEventListener('DOMContentLoaded', updatecartbadge);
 
 
 

@@ -1,4 +1,4 @@
-function loadCartTotals() {
+function loadcarttotal() {
     const cart = JSON.parse(localStorage.getItem('gv_cart') || '[]');
 
     if (cart.length > 0) {
@@ -112,7 +112,7 @@ function validate() {
 });
 
 
-function confirmPayment() {
+function confirm_payment() {
     if (!validate()) return;
 
 
@@ -123,5 +123,5 @@ function confirmPayment() {
     document.getElementById('success-overlay').classList.add('show');
 }
 
-window.addEventListener('storage', loadCartTotals);
-loadCartTotals();
+window.addEventListener('storage', loadcarttotal);
+loadcarttotal();
